@@ -11,16 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
-    <!-- Currency converter -->
     <main>
         <div class="container">
             <!-- Heading -->
             <div class="heading">
                 <h2>Currency converter</h2>
             </div>
-
-            <!-- Input -->
             <div class="input">
                 <div class="label">
                     <label for="amount">Enter amount</label>
@@ -28,21 +24,14 @@
                 <div class="input-field">
                     <input type="text" class="input-amount" placeholder="Enter amount here" name="amount" id="amount">
                 </div>
-            
-            <!-- Conversion options -->
                 <div class="options">
                     <div class="convert-from">
                         <div class="label-from">
                             <label for="from">From</label>
                         </div>
                         <div class="select-options">
-                            <img class="option-img img-from" src="us.png">
-                            <select name="from" id="from" class="select-from">
-                                <option value='usd' class="options-from">USD</option>
-                                <option value="inr" class="options-from">INR</option>
-                                <option value="aed" class="options-from">AED</option>
-                                <option value="aud" class="options-from">AUD</option>
-                            </select>
+                            <img class="option-img img-from" src="https://flagsapi.com/US/flat/64.png">
+                            <select name="from" id="from" class="select-from"></select>
                         </div>
                     </div>
                     <div class="arrow">
@@ -53,14 +42,8 @@
                             <label for="to">To</label>
                         </div>
                         <div class="select-options">
-                            <img class="option-img img-to" src="us.png">
-                            <select name="to" id="to" class="select-to">
-                                <img src="us.svg">
-                                <option value="usd">USD</option>
-                                <option value="inr">INR</option>
-                                <option value="aed">AED</option>
-                                <option value="aud">AUD</option>
-                            </select>
+                            <img class="option-img img-to" src="https://flagsapi.com/US/flat/64.png">
+                            <select name="to" id="to" class="select-to"></select>
                         </div>
                     </div>
                  </div>
@@ -73,8 +56,7 @@
                 </div>
         </div>
     </main>
-
-    <!-- Js file -->
+     <script src="country.js"></script>
      <script src="script.js"></script>
 </body>
 </html>
