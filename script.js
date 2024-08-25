@@ -11,30 +11,6 @@ selectFrom.addEventListener('input', () => {
 selectTo.addEventListener('input', () => {
     flagChange2();
 });
-const flagChange1 = () => {
-    let value = selectFrom.value;
-    if(value == 'usd') {
-        imgFrom.setAttribute('src', 'us.png');
-    } else if(value == 'inr') {
-        imgFrom.setAttribute('src', 'in.png');
-    } else if(value == 'aed') {
-        imgFrom.setAttribute('src', 'ae.png');
-    } else if(value == 'aud') {
-        imgFrom.setAttribute('src', 'au.png');
-    }
-} 
-const flagChange2 = () => {
-    let value = selectTo.value;
-    if(value == 'usd') {
-        imgTo.setAttribute('src', 'us.png');
-    } else if(value == 'inr') {
-        imgTo.setAttribute('src', 'in.png');
-    } else if(value == 'aed') {
-        imgTo.setAttribute('src', 'ae.png');
-    } else if(value == 'aud') {
-        imgTo.setAttribute('src', 'au.png');
-    }
-}
 const URL = 'https://v6.exchangerate-api.com/v6/95a1bc561d1bec166939a092/latest/USD';
 const getData = async () => {
     let data = await fetch(URL);
@@ -61,3 +37,23 @@ btn.addEventListener('click', () => {
         alert('You can only enter number')
     }
 });
+for(let country in countryList) {
+    let countryOpt = document.createElement('option');
+    countryOpt.setAttribute('value', country.toLowerCase());
+    countryOpt.innerText = country;
+    selectFrom.append(countryOpt);
+}
+for(let country in countryList) {
+    let countryOpt = document.createElement('option');
+    countryOpt.setAttribute('value', country.toLowerCase());
+    countryOpt.innerText = country;
+    selectTo.append(countryOpt);
+}
+const flagChange1 = () => {
+    let value = selectFrom.options[selectFrom.selectedIndex].text;
+    imgFrom.setAttribute('src', `https://flagsapi.com/${countryList[value]}/flat/64.png`)
+} 
+const flagChange2 = () => {
+    let value = selectTo.options[selectTo.selectedIndex].text;
+    imgTo.setAttribute('src', `https://flagsapi.com/${countryList[value]}/flat/64.png`)
+}
