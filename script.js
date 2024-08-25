@@ -11,14 +11,14 @@ selectFrom.addEventListener('input', () => {
 selectTo.addEventListener('input', () => {
     flagChange2();
 });
-const URL = 'https://v6.exchangerate-api.com/v6/95a1bc561d1bec166939a092/latest/USD';
+const URL = 'https://api.currencyapi.com/v3/latest?apikey=cur_live_6LC7mmFVKeSJDl8bqIvYMGTWPoMzsJLINMwbNfqk';
 const getData = async () => {
     let data = await fetch(URL);
     let response = await data.json();
     let from = selectFrom.options[selectFrom.selectedIndex].text;
     let to = selectTo.options[selectTo.selectedIndex].text;
-    let fromVal = response.conversion_rates[from];
-    let toVal = response.conversion_rates[to];
+    let fromVal = response.data[from].value;
+    let toVal = response.data[to].value;
     let valueNum = input.value;
     input.value = '';
     result(fromVal, toVal, valueNum);
