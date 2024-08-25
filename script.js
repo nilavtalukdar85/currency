@@ -5,10 +5,10 @@ let imgTo = document.querySelector('.img-to');
 let btn = document.querySelector('.btn');
 let outputText = document.querySelector('.output-text');
 let input = document.querySelector('.input-amount');
-selectFrom.addEventListener('change', () => {
+selectFrom.addEventListener('input', () => {
     flagChange1();
 });
-selectTo.addEventListener('change', () => {
+selectTo.addEventListener('input', () => {
     flagChange2();
 });
 const flagChange1 = () => {
